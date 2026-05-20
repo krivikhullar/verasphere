@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Versasphere LLC — Boutique Data & AI Consulting</title>
+<meta name="description" content="Modern data tools built for businesses that can't afford enterprise prices. Dashboards, ETL pipelines, and GenAI agents at fixed prices. Based in Chapel Hill, NC." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0a2540;
+  --blue:#1a6fb5;
+  --blue-lt:#3a9fd1;
+  --blue-pale:#e8f4fb;
+  --blue-mist:#f0f8ff;
+  --text:#3d5166;
+  --muted:#6b8299;
+  --border:rgba(26,111,181,0.15);
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.7;font-size:16px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+/* NAV */
+.vs-nav{background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);}
+.vs-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);cursor:pointer;text-decoration:none;}
+.vs-logo span{color:var(--blue);}
+.vs-nav-links{display:flex;gap:1.5rem;align-items:center;}
+.vs-nav-links a{text-decoration:none;color:var(--text);font-size:14px;transition:color .2s;cursor:pointer;}
+.vs-nav-links a:hover{color:var(--blue);}
+.vs-nav-cta{background:var(--blue)!important;color:#fff!important;padding:7px 18px;border-radius:6px;font-weight:500!important;font-size:13px!important;}
+.vs-nav-cta:hover{background:var(--navy)!important;color:#fff!important;}
+
+/* SECTIONS */
+.vs-section{padding:80px 2rem;}
+.vs-inner{max-width:960px;margin:0 auto;}
+.vs-tag{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem;}
+.vs-h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);font-weight:600;color:var(--navy);line-height:1.2;letter-spacing:-.3px;margin-bottom:.75rem;}
+.vs-sub{font-size:17px;color:var(--muted);font-weight:300;max-width:500px;margin-bottom:3rem;line-height:1.65;}
+
+/* HERO */
+.vs-hero{background:linear-gradient(155deg,#fff 0%,var(--blue-mist) 55%,var(--blue-pale) 100%);padding:100px 2rem 88px;text-align:center;}
+.vs-hero .vs-h1{margin-bottom:1.25rem;}
+.vs-hero .vs-h1 em{font-style:normal;color:var(--blue);}
+.vs-eyebrow{display:inline-block;background:var(--blue-pale);color:var(--blue);font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:5px 16px;border-radius:20px;border:1px solid rgba(26,111,181,.2);margin-bottom:1.5rem;}
+.vs-h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,56px);font-weight:600;color:var(--navy);line-height:1.15;letter-spacing:-.5px;}
+.vs-hero-sub{font-size:18px;color:var(--muted);max-width:520px;margin:0 auto 2.5rem;font-weight:300;line-height:1.65;}
+.vs-hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-p{background:var(--blue);color:#fff;padding:13px 28px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;}
+.btn-p:hover{background:var(--navy);transform:translateY(-1px);}
+.btn-s{background:transparent;color:var(--blue);padding:13px 28px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;border:1.5px solid var(--blue);cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;}
+.btn-s:hover{background:var(--blue-pale);}
+
+/* SERVICES */
+.vs-services{background:var(--white);}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;}
+.svc-card{border:1px solid var(--border);border-radius:14px;padding:1.75rem;background:var(--white);cursor:pointer;transition:all .25s;position:relative;overflow:hidden;}
+.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue-lt));opacity:0;transition:opacity .25s;}
+.svc-card.active,.svc-card:hover{border-color:rgba(26,111,181,.4);transform:translateY(-3px);box-shadow:0 10px 28px rgba(10,37,64,.08);}
+.svc-card.active::after,.svc-card:hover::after{opacity:1;}
+.svc-icon{width:44px;height:44px;background:var(--blue-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--blue);font-size:20px;}
+.svc-card h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:.5rem;}
+.svc-card p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:1rem;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.svc-tag{background:var(--blue-mist);color:#0c447c;font-size:11px;font-weight:500;padding:3px 9px;border-radius:20px;border:1px solid rgba(26,111,181,.15);}
+.svc-detail{margin-top:1.5rem;border:1px solid var(--border);border-radius:14px;padding:2rem;background:var(--blue-mist);display:none;}
+.svc-detail.visible{display:block;}
+.svc-detail h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:.75rem;}
+.svc-detail p{font-size:14.5px;color:var(--text);line-height:1.7;margin-bottom:1rem;}
+.svc-detail ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.4rem .5rem;}
+.svc-detail ul li{font-size:13.5px;color:var(--text);display:flex;align-items:center;gap:6px;}
+.svc-detail ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+.svc-cta{margin-top:1.25rem;}
+
+/* WHY */
+.vs-why{background:var(--blue-mist);}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.75rem;}
+.why-item{display:flex;gap:.875rem;}
+.why-ico{width:38px;height:38px;flex-shrink:0;background:var(--blue-pale);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:17px;border:1px solid rgba(26,111,181,.2);}
+.why-item h4{font-size:14.5px;font-weight:500;color:var(--navy);margin-bottom:3px;}
+.why-item p{font-size:13.5px;color:var(--muted);line-height:1.6;}
+
+/* WHO WE SERVE */
+.vs-who{background:var(--white);}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;}
+.who-card{border:1px solid var(--border);border-radius:12px;padding:1.25rem;text-align:center;transition:all .2s;cursor:default;}
+.who-card:hover{border-color:rgba(26,111,181,.35);background:var(--blue-mist);}
+.who-card h4{font-size:13.5px;font-weight:500;color:var(--navy);margin-bottom:.3rem;}
+.who-card p{font-size:12px;color:var(--muted);line-height:1.5;}
+.who-ico{font-size:24px;color:var(--blue);margin-bottom:.5rem;}
+
+/* MISSION */
+.vs-mission{background:var(--navy);padding:56px 2rem;}
+.mission-inner{max-width:760px;margin:0 auto;text-align:center;}
+.mission-inner .vs-tag{color:#85b7eb;}
+.mission-inner h2{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,34px);font-weight:600;color:#fff;line-height:1.3;margin-bottom:1rem;}
+.mission-inner p{font-size:16px;color:rgba(255,255,255,.65);line-height:1.75;max-width:600px;margin:0 auto;}
+.mission-badges{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.75rem;}
+.m-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:6px 16px;font-size:13px;color:rgba(255,255,255,.8);}
+
+/* CONTACT */
+.vs-contact{background:var(--blue-mist);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
+.c-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.75rem;margin-bottom:1rem;}
+.c-label{font-size:10.5px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:.5rem;}
+.c-card h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:.5rem;}
+.c-card p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:1.25rem;}
+.c-form{display:flex;flex-direction:column;gap:.75rem;}
+.c-form input,.c-form textarea,.c-form select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);outline:none;transition:border .2s;}
+.c-form input:focus,.c-form textarea:focus,.c-form select:focus{border-color:var(--blue);}
+.c-form textarea{min-height:90px;resize:vertical;}
+.c-form button{background:var(--blue);color:#fff;padding:11px;border-radius:8px;font-size:14px;font-weight:500;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;}
+.c-form button:hover{background:var(--navy);}
+.form-success{display:none;background:#e8f4fb;border:1px solid rgba(26,111,181,.25);border-radius:8px;padding:1rem;text-align:center;color:#0c447c;font-size:14px;font-weight:500;margin-top:.75rem;}
+.form-success.show{display:block;}
+.cal-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--blue-pale);color:var(--blue);border:1.5px solid rgba(26,111,181,.3);border-radius:8px;padding:12px;font-size:14px;font-weight:500;text-decoration:none;cursor:pointer;transition:background .2s;margin-bottom:.75rem;font-family:'DM Sans',sans-serif;}
+.cal-btn:hover{background:#d4ecf7;}
+.email-link{display:flex;align-items:center;gap:6px;color:var(--blue);font-size:14px;font-weight:500;text-decoration:none;}
+.email-link:hover{color:var(--navy);}
+
+/* FOOTER */
+.vs-footer{background:#071829;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.7);}
+.footer-logo span{color:#85b7eb;}
+.vs-footer p{font-size:12px;color:rgba(255,255,255,.3);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.vs-eyebrow{animation:fadeUp .45s ease both;}
+.vs-hero .vs-h1{animation:fadeUp .45s .1s ease both;}
+.vs-hero-sub{animation:fadeUp .45s .2s ease both;}
+.vs-hero-btns{animation:fadeUp .45s .3s ease both;}
+.scroll-reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
+.scroll-reveal.revealed{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .contact-grid{grid-template-columns:1fr;}
+  .vs-nav-links a:not(.vs-nav-cta){display:none;}
+}
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">Versasphere LLC — Boutique Data and AI Consulting for Small Businesses</h1>
+
+<nav class="vs-nav">
+  <a class="vs-logo" href="#">Versa<span>sphere</span></a>
+  <div class="vs-nav-links">
+    <a href="#services">Services</a>
+    <a href="#who">Who We Serve</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="vs-nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="vs-hero">
+  <div class="vs-eyebrow">Boutique Data &amp; AI Consulting · Chapel Hill, NC</div>
+  <h1 class="vs-h1">Modern data tools, built for businesses<br>that can't afford <em>enterprise prices</em></h1>
+  <p class="vs-hero-sub">Dashboards, data pipelines, and AI agents — delivered at fixed prices, without the big-firm overhead. Based in the Triangle, serving clients U.S.-wide.</p>
+  <div class="vs-hero-btns">
+    <a href="#contact" class="btn-p"><i class="ti ti-calendar" aria-hidden="true"></i> Book a Free Discovery Call</a>
+    <a href="mailto:krivikhullar@gmail.com" class="btn-s"><i class="ti ti-mail" aria-hidden="true"></i> Email Us</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="vs-services scroll-reveal" id="services" style="padding:80px 2rem;">
+  <div class="vs-inner">
+    <div class="vs-tag">What We Build</div>
+    <h2 class="vs-h2">Three services. Real outcomes.</h2>
+    <p class="vs-sub">Fixed-scope, fixed-price engagements. You always know what you're getting — and exactly what it costs. Click any service to learn more.</p>
+    <div class="svc-grid">
+      <div class="svc-card" onclick="toggleService('dash')" id="card-dash">
+        <div class="svc-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+        <h3>Operational Dashboards</h3>
+        <p>Live dashboards connected to your actual data — so you make decisions in real time, not at month-end.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Power BI</span>
+          <span class="svc-tag">Metabase</span>
+          <span class="svc-tag">SQL</span>
+          <span class="svc-tag">Fixed Price</span>
+        </div>
+      </div>
+      <div class="svc-card" onclick="toggleService('etl')" id="card-etl">
+        <div class="svc-icon"><i class="ti ti-refresh" aria-hidden="true"></i></div>
+        <h3>ETL &amp; Data Pipelines</h3>
+        <p>Automated pipelines that move, clean, and consolidate your data reliably — every day, without manual exports.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Azure Data Factory</span>
+          <span class="svc-tag">Airbyte</span>
+          <span class="svc-tag">n8n</span>
+          <span class="svc-tag">PostgreSQL</span>
+        </div>
+      </div>
+      <div class="svc-card" onclick="toggleService('ai')" id="card-ai">
+        <div class="svc-icon"><i class="ti ti-robot" aria-hidden="true"></i></div>
+        <h3>GenAI Agents</h3>
+        <p>Custom AI chat and voice agents trained on your business — for client intake, staff automation, and more.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Azure OpenAI</span>
+          <span class="svc-tag">RAG</span>
+          <span class="svc-tag">Copilot Studio</span>
+          <span class="svc-tag">Voice AI</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-detail" id="detail-dash">
+      <h4>Operational Dashboards</h4>
+      <p>Most small businesses are still making decisions based on last month's spreadsheet export. We connect directly to your data sources — your CRM, accounting system, spreadsheets — and build a live dashboard your team actually uses every day.</p>
+      <p>What you get at the end of the engagement:</p>
+      <ul>
+        <li>Live, auto-refreshing dashboard</li>
+        <li>Connected to your existing data sources</li>
+        <li>Mobile-accessible views</li>
+        <li>Role-based access controls</li>
+        <li>Full documentation so your team can own it</li>
+        <li>30-day post-launch support window</li>
+      </ul>
+      <div class="svc-cta"><a href="#contact" class="btn-p">Get a fixed-price quote <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+    </div>
+
+    <div class="svc-detail" id="detail-etl">
+      <h4>ETL &amp; Data Pipelines</h4>
+      <p>Your data lives in five different places and none of them talk to each other — Shopify, QuickBooks, a Google Sheet, your POS, your email platform. We build the plumbing: automated pipelines that move, clean, and consolidate your data into one place, reliably, every single day.</p>
+      <p>What you get at the end of the engagement:</p>
+      <ul>
+        <li>Automated data pipelines with error alerting</li>
+        <li>Consolidated data in a clean central store</li>
+        <li>Scheduled refresh (daily, hourly, or real-time)</li>
+        <li>Data quality checks built in</li>
+        <li>Monitoring dashboard so you know when something breaks</li>
+        <li>Full handoff documentation</li>
+      </ul>
+      <div class="svc-cta"><a href="#contact" class="btn-p">Get a fixed-price quote <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+    </div>
+
+    <div class="svc-detail" id="detail-ai">
+      <h4>GenAI Agents</h4>
+      <p>Not a generic chatbot — a custom AI agent trained on your actual business: your service menu, policies, FAQs, and client intake forms. We build agents that handle the repetitive questions your staff answers 20 times a day, so your team can focus on the work that actually needs them.</p>
+      <p>What you get at the end of the engagement:</p>
+      <ul>
+        <li>Custom AI agent trained on your documents and data</li>
+        <li>Embedded on your website or internal tools</li>
+        <li>Voice agent option for phone intake</li>
+        <li>Escalation logic to hand off to a human</li>
+        <li>Usage analytics so you see what's being asked</li>
+        <li>Ongoing prompt tuning support</li>
+      </ul>
+      <div class="svc-cta"><a href="#contact" class="btn-p">Get a fixed-price quote <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="vs-who scroll-reveal" id="who" style="padding:80px 2rem;">
+  <div class="vs-inner">
+    <div class="vs-tag">Who We Serve</div>
+    <h2 class="vs-h2">Built for businesses like yours</h2>
+    <p class="vs-sub">We work with U.S. small and mid-sized businesses across industries. Two verticals where we have deep domain knowledge:</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-ico"><i class="ti ti-school" aria-hidden="true"></i></div>
+        <h4>Higher Education</h4>
+        <p>Departments, research centers, continuing-ed programs, alumni offices</p>
+      </div>
+      <div class="who-card">
+        <div class="who-ico"><i class="ti ti-stethoscope" aria-hidden="true"></i></div>
+        <h4>Healthcare Practices</h4>
+        <p>Independent medical, dental, ortho, PT, and optometry practices</p>
+      </div>
+      <div class="who-card">
+        <div class="who-ico"><i class="ti ti-building-store" aria-hidden="true"></i></div>
+        <h4>Small &amp; Mid-Sized Businesses</h4>
+        <p>Any business outgrowing spreadsheets and manual reporting</p>
+      </div>
+      <div class="who-card">
+        <div class="who-ico"><i class="ti ti-heart" aria-hidden="true"></i></div>
+        <h4>Nonprofits &amp; Community Orgs</h4>
+        <p>Mission-driven organizations — with community pricing available</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VERSASPHERE -->
+<section class="vs-why scroll-reveal" id="why" style="padding:80px 2rem;">
+  <div class="vs-inner">
+    <div class="vs-tag">Why Versasphere</div>
+    <h2 class="vs-h2">Boutique quality. SMB price tag.</h2>
+    <p class="vs-sub">We're not a large agency with account managers between you and the work.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-ico"><i class="ti ti-lock" aria-hidden="true"></i></div>
+        <div><h4>Fixed scope, fixed price</h4><p>No hourly billing surprises. You approve the price before we start — full stop.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-ico"><i class="ti ti-user" aria-hidden="true"></i></div>
+        <div><h4>Direct access</h4><p>You work directly with the person building it — not a PM relaying messages.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-ico"><i class="ti ti-file" aria-hidden="true"></i></div>
+        <div><h4>Built to last</h4><p>We document everything so your team can own and maintain what we deliver.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-ico"><i class="ti ti-heart" aria-hidden="true"></i></div>
+        <div><h4>Community pricing</h4><p>25% discount for nonprofits, religious orgs, and immigrant-owned businesses.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-ico"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+        <div><h4>Triangle-based, U.S.-wide</h4><p>Based in Chapel Hill, NC. We serve clients nationwide via video and email.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-ico"><i class="ti ti-target" aria-hidden="true"></i></div>
+        <div><h4>Outcomes, not deliverables</h4><p>We define what success looks like before we write a single line of code.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="vs-mission scroll-reveal">
+  <div class="mission-inner">
+    <div class="vs-tag">Our Mission</div>
+    <h2>Help small businesses translate modern technology into real outcomes — at honest prices</h2>
+    <p>Versasphere exists because great data infrastructure shouldn't be reserved for companies with million-dollar IT budgets. Every business deserves the same clarity, automation, and intelligence that the Fortune 500 has had for a decade.</p>
+    <div class="mission-badges">
+      <span class="m-badge"><i class="ti ti-check" aria-hidden="true"></i> NC-registered LLC</span>
+      <span class="m-badge"><i class="ti ti-check" aria-hidden="true"></i> Fixed-price engagements</span>
+      <span class="m-badge"><i class="ti ti-check" aria-hidden="true"></i> Real SOWs &amp; defined outcomes</span>
+      <span class="m-badge"><i class="ti ti-check" aria-hidden="true"></i> Community discounts available</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="vs-contact scroll-reveal" id="contact" style="padding:80px 2rem;">
+  <div class="vs-inner">
+    <div class="vs-tag">Get in Touch</div>
+    <h2 class="vs-h2">Ready to talk?</h2>
+    <p class="vs-sub">No sales pitch — just an honest conversation about your business and whether we can help.</p>
+    <div class="contact-grid">
+      <div class="c-card">
+        <div class="c-label">Send a Message</div>
+        <h3>Tell us what you're working on</h3>
+        <p>We'll respond within one business day with honest thoughts — no obligation.</p>
+        <div class="c-form">
+          <input type="text" id="f-name" placeholder="Your name" />
+          <input type="email" id="f-email" placeholder="Your email" />
+          <select id="f-service">
+            <option value="">What are you interested in?</option>
+            <option>Operational Dashboards</option>
+            <option>ETL &amp; Data Pipelines</option>
+            <option>GenAI Agents</option>
+            <option>Not sure yet — I want to talk</option>
+          </select>
+          <textarea id="f-msg" placeholder="Briefly describe what you're dealing with…"></textarea>
+          <button type="button" onclick="submitForm()">Send Message <i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+        </div>
+        <div class="form-success" id="form-success">
+          <i class="ti ti-check" aria-hidden="true"></i> Thanks! We'll be in touch within one business day.
+        </div>
+      </div>
+      <div>
+        <div class="c-card">
+          <div class="c-label">30-Minute Call</div>
+          <h3>Book a Discovery Call</h3>
+          <p>Tell us what you're dealing with. We'll ask the right questions and be honest about fit.</p>
+          <a class="cal-btn" href="https://calendly.com" target="_blank" rel="noopener">
+            <i class="ti ti-calendar" aria-hidden="true"></i> Book on Calendly
+          </a>
+          <p style="font-size:12px;color:var(--muted);">Calendly link coming soon — email us in the meantime.</p>
+        </div>
+        <div class="c-card">
+          <div class="c-label">Direct Email</div>
+          <h3>Prefer email?</h3>
+          <p>Reach us directly. We read every message and respond personally.</p>
+          <a class="email-link" href="mailto:krivikhullar@gmail.com">
+            <i class="ti ti-mail" aria-hidden="true"></i> krivikhullar@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="vs-footer">
+  <div class="footer-logo">Versa<span>sphere</span> LLC</div>
+  <p>© 2025 Versasphere LLC · Chapel Hill, NC · All rights reserved</p>
+</footer>
+
+<script>
+var activeService = null;
+
+function toggleService(key) {
+  var details = ['dash', 'etl', 'ai'];
+  if (activeService === key) {
+    document.getElementById('detail-' + key).classList.remove('visible');
+    document.getElementById('card-' + key).classList.remove('active');
+    activeService = null;
+    return;
+  }
+  details.forEach(function(d) {
+    document.getElementById('detail-' + d).classList.remove('visible');
+    document.getElementById('card-' + d).classList.remove('active');
+  });
+  document.getElementById('detail-' + key).classList.add('visible');
+  document.getElementById('card-' + key).classList.add('active');
+  activeService = key;
+  setTimeout(function() {
+    document.getElementById('detail-' + key).scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 50);
+}
+
+function submitForm() {
+  var name = document.getElementById('f-name').value.trim();
+  var email = document.getElementById('f-email').value.trim();
+  var msg = document.getElementById('f-msg').value.trim();
+  if (!name || !email || !msg) {
+    alert('Please fill in your name, email, and message.');
+    return;
+  }
+  var service = document.getElementById('f-service').value || 'Not specified';
+  var mailto = 'mailto:krivikhullar@gmail.com'
+    + '?subject=' + encodeURIComponent('Versasphere Inquiry from ' + name)
+    + '&body=' + encodeURIComponent(
+        'Name: ' + name + '\n'
+      + 'Email: ' + email + '\n'
+      + 'Service of Interest: ' + service + '\n\n'
+      + msg
+    );
+  window.location.href = mailto;
+  document.getElementById('form-success').classList.add('show');
+  document.getElementById('f-name').value = '';
+  document.getElementById('f-email').value = '';
+  document.getElementById('f-msg').value = '';
+  document.getElementById('f-service').value = '';
+}
+
+var reveals = document.querySelectorAll('.scroll-reveal');
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('revealed');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(function(r) { observer.observe(r); });
+</script>
+
+</body>
+</html>
