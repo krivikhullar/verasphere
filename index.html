@@ -24,8 +24,6 @@
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.7;font-size:16px;}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-
-/* NAV */
 .vs-nav{background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);}
 .vs-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);cursor:pointer;text-decoration:none;}
 .vs-logo span{color:var(--blue);}
@@ -34,15 +32,11 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
 .vs-nav-links a:hover{color:var(--blue);}
 .vs-nav-cta{background:var(--blue)!important;color:#fff!important;padding:7px 18px;border-radius:6px;font-weight:500!important;font-size:13px!important;}
 .vs-nav-cta:hover{background:var(--navy)!important;color:#fff!important;}
-
-/* SECTIONS */
 .vs-section{padding:80px 2rem;}
 .vs-inner{max-width:960px;margin:0 auto;}
 .vs-tag{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem;}
 .vs-h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);font-weight:600;color:var(--navy);line-height:1.2;letter-spacing:-.3px;margin-bottom:.75rem;}
 .vs-sub{font-size:17px;color:var(--muted);font-weight:300;max-width:500px;margin-bottom:3rem;line-height:1.65;}
-
-/* HERO */
 .vs-hero{background:linear-gradient(155deg,#fff 0%,var(--blue-mist) 55%,var(--blue-pale) 100%);padding:100px 2rem 88px;text-align:center;}
 .vs-hero .vs-h1{margin-bottom:1.25rem;}
 .vs-hero .vs-h1 em{font-style:normal;color:var(--blue);}
@@ -54,8 +48,16 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
 .btn-p:hover{background:var(--navy);transform:translateY(-1px);}
 .btn-s{background:transparent;color:var(--blue);padding:13px 28px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;border:1.5px solid var(--blue);cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;}
 .btn-s:hover{background:var(--blue-pale);}
-
-/* SERVICES */
+.vs-proof{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:52px 2rem;}
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;text-align:center;align-items:center;}
+.proof-stat{padding:.75rem;}
+.proof-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:600;color:var(--navy);line-height:1;}
+.proof-label{font-size:13px;color:var(--muted);margin-top:.4rem;line-height:1.5;}
+.proof-divider{width:1px;background:var(--border);min-height:60px;align-self:stretch;}
+.proof-quote{background:var(--blue-mist);border:1px solid var(--border);border-radius:14px;padding:1.5rem 2rem;margin-top:2rem;display:flex;gap:1.25rem;align-items:flex-start;}
+.proof-quote-mark{font-family:'Playfair Display',serif;font-size:52px;color:var(--blue);line-height:.75;flex-shrink:0;opacity:.35;}
+.proof-quote-text{font-size:15px;color:var(--text);line-height:1.7;font-style:italic;}
+.proof-quote-attr{font-size:13px;color:var(--muted);margin-top:.5rem;font-style:normal;}
 .vs-services{background:var(--white);}
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;}
 .svc-card{border:1px solid var(--border);border-radius:14px;padding:1.75rem;background:var(--white);cursor:pointer;transition:all .25s;position:relative;overflow:hidden;}
@@ -75,16 +77,12 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
 .svc-detail ul li{font-size:13.5px;color:var(--text);display:flex;align-items:center;gap:6px;}
 .svc-detail ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;}
 .svc-cta{margin-top:1.25rem;}
-
-/* WHY */
 .vs-why{background:var(--blue-mist);}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.75rem;}
 .why-item{display:flex;gap:.875rem;}
 .why-ico{width:38px;height:38px;flex-shrink:0;background:var(--blue-pale);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:17px;border:1px solid rgba(26,111,181,.2);}
 .why-item h4{font-size:14.5px;font-weight:500;color:var(--navy);margin-bottom:3px;}
 .why-item p{font-size:13.5px;color:var(--muted);line-height:1.6;}
-
-/* WHO WE SERVE */
 .vs-who{background:var(--white);}
 .who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;}
 .who-card{border:1px solid var(--border);border-radius:12px;padding:1.25rem;text-align:center;transition:all .2s;cursor:default;}
@@ -92,8 +90,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
 .who-card h4{font-size:13.5px;font-weight:500;color:var(--navy);margin-bottom:.3rem;}
 .who-card p{font-size:12px;color:var(--muted);line-height:1.5;}
 .who-ico{font-size:24px;color:var(--blue);margin-bottom:.5rem;}
-
-/* MISSION */
 .vs-mission{background:var(--navy);padding:56px 2rem;}
 .mission-inner{max-width:760px;margin:0 auto;text-align:center;}
 .mission-inner .vs-tag{color:#85b7eb;}
@@ -101,8 +97,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
 .mission-inner p{font-size:16px;color:rgba(255,255,255,.65);line-height:1.75;max-width:600px;margin:0 auto;}
 .mission-badges{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.75rem;}
 .m-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:6px 16px;font-size:13px;color:rgba(255,255,255,.8);}
-
-/* CONTACT */
 .vs-contact{background:var(--blue-mist);}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
 .c-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.75rem;margin-bottom:1rem;}
@@ -117,18 +111,14 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
 .c-form button:hover{background:var(--navy);}
 .form-success{display:none;background:#e8f4fb;border:1px solid rgba(26,111,181,.25);border-radius:8px;padding:1rem;text-align:center;color:#0c447c;font-size:14px;font-weight:500;margin-top:.75rem;}
 .form-success.show{display:block;}
-.cal-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--blue-pale);color:var(--blue);border:1.5px solid rgba(26,111,181,.3);border-radius:8px;padding:12px;font-size:14px;font-weight:500;text-decoration:none;cursor:pointer;transition:background .2s;margin-bottom:.75rem;font-family:'DM Sans',sans-serif;}
+.cal-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--blue-pale);color:var(--blue);border:1.5px solid rgba(26,111,181,.3);border-radius:8px;padding:12px;font-size:14px;font-weight:500;text-decoration:none;cursor:pointer;transition:background .2s;font-family:'DM Sans',sans-serif;}
 .cal-btn:hover{background:#d4ecf7;}
 .email-link{display:flex;align-items:center;gap:6px;color:var(--blue);font-size:14px;font-weight:500;text-decoration:none;}
 .email-link:hover{color:var(--navy);}
-
-/* FOOTER */
 .vs-footer{background:#071829;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;}
 .footer-logo{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.7);}
 .footer-logo span{color:#85b7eb;}
 .vs-footer p{font-size:12px;color:rgba(255,255,255,.3);}
-
-/* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 .vs-eyebrow{animation:fadeUp .45s ease both;}
 .vs-hero .vs-h1{animation:fadeUp .45s .1s ease both;}
@@ -136,11 +126,11 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
 .vs-hero-btns{animation:fadeUp .45s .3s ease both;}
 .scroll-reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
 .scroll-reveal.revealed{opacity:1;transform:translateY(0);}
-
-/* RESPONSIVE */
 @media(max-width:640px){
   .contact-grid{grid-template-columns:1fr;}
   .vs-nav-links a:not(.vs-nav-cta){display:none;}
+  .proof-divider{display:none;}
+  .proof-quote{flex-direction:column;gap:.5rem;}
 }
 </style>
 </head>
@@ -159,7 +149,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="vs-hero">
   <div class="vs-eyebrow">Boutique Data &amp; AI Consulting · Chapel Hill, NC</div>
   <h1 class="vs-h1">Modern data tools, built for businesses<br>that can't afford <em>enterprise prices</em></h1>
@@ -170,7 +159,39 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
   </div>
 </section>
 
-<!-- SERVICES -->
+<section class="vs-proof scroll-reveal">
+  <div class="vs-inner">
+    <div class="proof-grid">
+      <div class="proof-stat">
+        <div class="proof-num">10+</div>
+        <div class="proof-label">Years of combined domain experience in higher education &amp; healthcare</div>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-stat">
+        <div class="proof-num">3</div>
+        <div class="proof-label">Core services — each fixed-scope, fixed-price, and fully documented</div>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-stat">
+        <div class="proof-num">NC</div>
+        <div class="proof-label">Registered LLC · EIN obtained · Professional liability coverage</div>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-stat">
+        <div class="proof-num">U.S.</div>
+        <div class="proof-label">Nationwide reach via video — Triangle area for in-person engagements</div>
+      </div>
+    </div>
+    <div class="proof-quote">
+      <div class="proof-quote-mark">&ldquo;</div>
+      <div>
+        <div class="proof-quote-text">Small businesses deserve the same data clarity the Fortune 500 has had for a decade. We built Versasphere to make that accessible — at honest prices, with none of the big-agency overhead.</div>
+        <div class="proof-quote-attr">— Lakhesh Khullar, Owner · Versasphere LLC · 10+ years in higher education &amp; healthcare technology</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="vs-services scroll-reveal" id="services" style="padding:80px 2rem;">
   <div class="vs-inner">
     <div class="vs-tag">What We Build</div>
@@ -211,7 +232,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
         </div>
       </div>
     </div>
-
     <div class="svc-detail" id="detail-dash">
       <h4>Operational Dashboards</h4>
       <p>Most small businesses are still making decisions based on last month's spreadsheet export. We connect directly to your data sources — your CRM, accounting system, spreadsheets — and build a live dashboard your team actually uses every day.</p>
@@ -226,7 +246,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
       </ul>
       <div class="svc-cta"><a href="#contact" class="btn-p">Get a fixed-price quote <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
     </div>
-
     <div class="svc-detail" id="detail-etl">
       <h4>ETL &amp; Data Pipelines</h4>
       <p>Your data lives in five different places and none of them talk to each other — Shopify, QuickBooks, a Google Sheet, your POS, your email platform. We build the plumbing: automated pipelines that move, clean, and consolidate your data into one place, reliably, every single day.</p>
@@ -241,7 +260,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
       </ul>
       <div class="svc-cta"><a href="#contact" class="btn-p">Get a fixed-price quote <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
     </div>
-
     <div class="svc-detail" id="detail-ai">
       <h4>GenAI Agents</h4>
       <p>Not a generic chatbot — a custom AI agent trained on your actual business: your service menu, policies, FAQs, and client intake forms. We build agents that handle the repetitive questions your staff answers 20 times a day, so your team can focus on the work that actually needs them.</p>
@@ -259,7 +277,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
   </div>
 </section>
 
-<!-- WHO WE SERVE -->
 <section class="vs-who scroll-reveal" id="who" style="padding:80px 2rem;">
   <div class="vs-inner">
     <div class="vs-tag">Who We Serve</div>
@@ -278,8 +295,8 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
       </div>
       <div class="who-card">
         <div class="who-ico"><i class="ti ti-building-store" aria-hidden="true"></i></div>
-        <h4>Small &amp; Mid-Sized Businesses</h4>
-        <p>Any business outgrowing spreadsheets and manual reporting</p>
+        <h4>Multi-Location Service Businesses</h4>
+        <p>Regional chains and franchise operators outgrowing manual reporting across locations</p>
       </div>
       <div class="who-card">
         <div class="who-ico"><i class="ti ti-heart" aria-hidden="true"></i></div>
@@ -290,7 +307,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
   </div>
 </section>
 
-<!-- WHY VERSASPHERE -->
 <section class="vs-why scroll-reveal" id="why" style="padding:80px 2rem;">
   <div class="vs-inner">
     <div class="vs-tag">Why Versasphere</div>
@@ -325,7 +341,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
   </div>
 </section>
 
-<!-- MISSION -->
 <section class="vs-mission scroll-reveal">
   <div class="mission-inner">
     <div class="vs-tag">Our Mission</div>
@@ -340,7 +355,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="vs-contact scroll-reveal" id="contact" style="padding:80px 2rem;">
   <div class="vs-inner">
     <div class="vs-tag">Get in Touch</div>
@@ -373,10 +387,9 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
           <div class="c-label">30-Minute Call</div>
           <h3>Book a Discovery Call</h3>
           <p>Tell us what you're dealing with. We'll ask the right questions and be honest about fit.</p>
-          <a class="cal-btn" href="https://calendly.com" target="_blank" rel="noopener">
+          <a class="cal-btn" href="https://calendly.com/krivikhullar" target="_blank" rel="noopener">
             <i class="ti ti-calendar" aria-hidden="true"></i> Book on Calendly
           </a>
-          <p style="font-size:12px;color:var(--muted);">Calendly link coming soon — email us in the meantime.</p>
         </div>
         <div class="c-card">
           <div class="c-label">Direct Email</div>
@@ -391,15 +404,13 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="vs-footer">
   <div class="footer-logo">Versa<span>sphere</span> LLC</div>
-  <p>© 2025 Versasphere LLC · Chapel Hill, NC · All rights reserved</p>
+  <p>&copy; 2026 Versasphere LLC &middot; Chapel Hill, NC &middot; All rights reserved</p>
 </footer>
 
 <script>
 var activeService = null;
-
 function toggleService(key) {
   var details = ['dash', 'etl', 'ai'];
   if (activeService === key) {
@@ -419,7 +430,6 @@ function toggleService(key) {
     document.getElementById('detail-' + key).scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, 50);
 }
-
 function submitForm() {
   var name = document.getElementById('f-name').value.trim();
   var email = document.getElementById('f-email').value.trim();
@@ -444,7 +454,6 @@ function submitForm() {
   document.getElementById('f-msg').value = '';
   document.getElementById('f-service').value = '';
 }
-
 var reveals = document.querySelectorAll('.scroll-reveal');
 var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) {
